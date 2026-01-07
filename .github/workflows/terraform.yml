@@ -42,11 +42,11 @@ jobs:
       - name: Terraform Apply
         run: |
           if [[ "${GITHUB_REF_NAME}" == "dev" ]]; then
-            cd terraform/envs/dev
+            cd envs/dev
           elif [[ "${GITHUB_REF_NAME}" == "stage" ]]; then
-            cd terraform/envs/stage
+            cd envs/stage
           else
-            cd terraform/envs/prod
+            cd envs/prod
           fi
           terraform apply -auto-approve
 
